@@ -42,23 +42,26 @@ const Results = () => {
         let carsPercent = (cars / total) * 100
 
         return (
-            <PieChart
-                data={[
-                    { title: 'Electricity', value: electricityPercent, color: '#E38627' },
-                    { title: 'Gas', value: gasPercent, color: '#C13C37' },
-                    { title: 'Heating Oil', value: oilPercent, color: '#6A2135' },
-                    { title: 'Cars', value: carsPercent, color: '#F5A623' },
-                ]}
-                label={({ dataEntry }) => dataEntry.title}
-                labelStyle={{ fontSize: '5px', fill: '#000000' }}
-                labelPosition={130}
-                radius={10}
-                lineWidth={100}
-                segmentsStyle={{ transition: 'stroke .3s', cursor: 'pointer' }}
-                animate
-                animationDuration={500}
-                animationEasing="ease-out"
-            />
+            <div className={styles.piechart}>
+                <PieChart
+                    data={[
+                        { title: 'Electricity', value: electricityPercent, color: '#E38627' },
+                        { title: 'Gas', value: gasPercent, color: '#C13C37' },
+                        { title: 'Heating Oil', value: oilPercent, color: '#6A2135' },
+                        { title: 'Cars', value: carsPercent, color: '#F5A623' },
+                    ]}
+                    label={({ dataEntry }) => dataEntry.title}
+                    labelStyle={{ fontSize: '5px', fill: '#000000' }}
+                    labelPosition={130}
+                    radius={20}
+                    segmentsStyle={{ transition: 'stroke .3s', cursor: 'pointer' }}
+                    animate
+                    animationDuration={500}
+                    animationEasing="ease-out"
+                    viewBoxSize={[100, 75]}
+                    center={[50, 37.5]}
+                />
+            </div>
         )
     }
 
@@ -122,7 +125,8 @@ const Results = () => {
 
     return (
         <>
-            <Header heading="Household" subheading="Usage inside your home" /><div className={styles.chart}>
+            <Header heading="Household" subheading="Usage inside your home" />
+            <div className={styles.chart}>
                 {pieChart()}
                 {renderTable()}
             </div>

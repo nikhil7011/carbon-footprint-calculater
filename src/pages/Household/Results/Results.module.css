@@ -1,6 +1,21 @@
 .chart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Barlow';
-  }
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Barlow';
+}
+
+.piechart {
+  height: 350px;
+}
+
+table,
+th,
+td {
+  border: 2px solid black;
+}
+
+th,
+td {
+  padding: 10px;
+}
