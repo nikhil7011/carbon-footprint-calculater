@@ -15,7 +15,7 @@
   }
   
   .header__subheading {
-    font-size: var(--font-medium);
+    font-size: var(--font-medium-lm);
     font-weight: 400;
-    margin-bottom: 0px;
+    margin-bottom: 80px;
   }

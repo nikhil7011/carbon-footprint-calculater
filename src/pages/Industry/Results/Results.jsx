@@ -18,10 +18,10 @@ const Results = () => {
         // heating oil consumption
         total += formData.oil * 2.7
         // number of people in the household
-        total += formData.people * 0.5
+        total += formData.coal * 0.5
         // distance travelled by each car
-        for (let i = 1; i <= formData.cars; i++) {
-            total += formData[`car${i}`] * 0.2
+        for (let i = 1; i <= formData.machines; i++) {
+            total += formData[`Machine${i}`] * 0.2
         }
         return total
     }
@@ -31,15 +31,15 @@ const Results = () => {
         let electricity = formData.electricity * 0.5
         let gas = formData.gas * 2.3
         let oil = formData.oil * 2.7
-        let cars = 0
-        for (let i = 1; i <= formData.cars; i++) {
-            cars += formData[`car${i}`] * 0.2
+        let machines = 0
+        for (let i = 1; i <= formData.machines; i++) {
+            machines += formData[`Machine${i}`] * 0.2
         }
-        let total = electricity + gas + oil + cars
+        let total = electricity + gas + oil + machines
         let electricityPercent = (electricity / total) * 100
         let gasPercent = (gas / total) * 100
         let oilPercent = (oil / total) * 100
-        let carsPercent = (cars / total) * 100
+        let machinesPercent = (machines / total) * 100
 
         return (
             <div className={styles.piechart}>
@@ -48,7 +48,7 @@ const Results = () => {
                         { title: 'Electricity', value: electricityPercent, color: 'green' },
                         { title: 'Gas', value: gasPercent, color: 'orange' },
                         { title: 'Heating Oil', value: oilPercent, color: 'red' },
-                        { title: 'Cars', value: carsPercent, color: '#1bbcf2' },
+                        { title: 'Machines', value: machinesPercent, color: '#1bbcf2' },
                     ]}
                     label={({ dataEntry }) => dataEntry.title}
                     labelStyle={{ fontSize: '5px', fill: '#000000' }}
