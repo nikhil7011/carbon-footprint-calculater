@@ -46,7 +46,12 @@ th {
 }
 
 .message {
-  font-size: var(--font-medium);
+  font-size: var(--font-medium-lm);
   font-weight: 400;
   margin-bottom: 0px;
+}
+
+.division {
+  background: url('../../../../public/assets/images/bg3.jpg') no-repeat center center
+    fixed !important;
 }

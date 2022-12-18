@@ -168,11 +168,13 @@ const Results = () => {
             }
             let total = electricity + gas + oil + cars
             let electricityPercent = (electricity / total) * 100
+            console.log(electricityPercent)
             let gasPercent = (gas / total) * 100
+            console.log(gasPercent)
             let oilPercent = (oil / total) * 100
             let carsPercent = (cars / total) * 100
 
-            if (electricityPercent > 50) {
+            if (electricityPercent > 30) {
                 return (
                     <div className={styles.message}>
                         <h3> Your electricity consumption is high. Here are some ways to reduce it:</h3>
@@ -186,7 +188,7 @@ const Results = () => {
                     </div>
                 )
             }
-            if (gasPercent > 50) {
+            if (gasPercent > 30) {
                 return (
                     <div className={styles.message}>
                         <h3> Your gas consumption is high. Here are some ways to reduce it:</h3>
@@ -198,7 +200,7 @@ const Results = () => {
                     </div>
                 )
             }
-            if (oilPercent > 50) {
+            if (oilPercent >30) {
                 return (
                     <div className={styles.message}>
                         <h3> Your heating oil consumption is high. Here are some ways to reduce it:</h3>
@@ -210,7 +212,7 @@ const Results = () => {
                     </div>
                 )
             }
-            if (carsPercent > 50) {
+            if (carsPercent > 30) {
                 return (
                     <div className={styles.message}>
                         <h3> Your car's carbon emission is high. Here are some ways to reduce it:</h3>
@@ -228,7 +230,7 @@ const Results = () => {
 
 
     return (
-        <>
+        <div className={styles.division}>
             <header className={styles.header}>
                 <h1 className={styles.header__heading}>Results</h1>
             </header>
@@ -238,7 +240,7 @@ const Results = () => {
                 {renderMessage()}
                 {renderMessage2()}
             </div>
-        </>
+        </div>
     )
 }
 
